@@ -1,0 +1,8 @@
+name: VaultAPI
+version: ${project.version}
+main: man10vaultapi.vaultapi.VaultAPI
+authors: [Sho0]
+description: Man10 Vault API
+website: man10.red
+commands:
+ test:
