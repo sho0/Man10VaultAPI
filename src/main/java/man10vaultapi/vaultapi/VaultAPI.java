@@ -5,29 +5,19 @@ import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Random;
 import java.util.UUID;
 
-public final class VaultAPI extends JavaPlugin {
+/**
+ * Created by sho on 2017/07/21.
+ */
+public class VaultAPI {
+    public static Economy economy = null;
 
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
+    public VaultAPI(){
         setupEconomy();
     }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
-
-    public static Economy economy = null;
 
     private boolean setupEconomy() {
         Bukkit.getLogger().info("setupEconomy");
@@ -97,14 +87,5 @@ public final class VaultAPI extends JavaPlugin {
         }
 
         return  false;
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(command.getName().equals("test")){
-            Player p = (Player) sender;
-            p.sendMessage(String.valueOf(getBalance(p.getUniqueId())));
-        }
-        return false;
     }
 }
