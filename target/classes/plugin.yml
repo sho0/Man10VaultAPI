@@ -1,0 +1,6 @@
+name: VaultAPI
+version: 1.0-SNAPSHOT
+main: man10vaultapi.vaultapi.Man10Vault
+authors: [Sho0]
+description: Man10 Vault API
+website: man10.red
